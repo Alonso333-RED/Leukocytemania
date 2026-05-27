@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfnka0ogluwe4"]
+
+[ext_resource type="PackedScene" uid="uid://cahjdlcvetirq" path="res://player/Player.tscn" id="1_fafdd"]
+[ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="2_qdja7"]
+
+[node name="Game" type="Node2D" unique_id=385261838]
+
+[node name="Player" parent="." unique_id=73547909 instance=ExtResource("1_fafdd")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1229210349]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2080973053]
+offset_left = -1000.0
+offset_top = -500.0
+offset_right = 1000.0
+offset_bottom = 500.0
+texture = ExtResource("2_qdja7")
