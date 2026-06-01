@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bd4ilt0ga8lwq"]
+
+[ext_resource type="Script" uid="uid://t57yllm5qwe1" path="res://entities/leucocyte/leukocyte.gd" id="1_twb2m"]
+[ext_resource type="Texture2D" uid="uid://dniwsxorgk3d3" path="res://entities/leucocyte/leukocyte.png" id="2_u4n22"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7btpl"]
+radius = 37.0
+
+[node name="Leukocyte" type="CharacterBody2D" unique_id=1604919092 groups=["infectable", "predator"]]
+script = ExtResource("1_twb2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683116722]
+shape = SubResource("CircleShape2D_7btpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746694435]
+texture = ExtResource("2_u4n22")

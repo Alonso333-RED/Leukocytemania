@@ -1,17 +1,47 @@
 [gd_scene format=3 uid="uid://cfnka0ogluwe4"]
 
 [ext_resource type="PackedScene" uid="uid://cahjdlcvetirq" path="res://player/Player.tscn" id="1_fafdd"]
-[ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="2_qdja7"]
+[ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="1_m71xk"]
+[ext_resource type="Texture2D" uid="uid://bcqagyajuy0ly" path="res://game/mask_4000_4000_border100.png" id="2_m71xk"]
+[ext_resource type="PackedScene" uid="uid://c46c56elpxndb" path="res://spawn_engine/EntitySpawner.tscn" id="4_knu3h"]
+[ext_resource type="Script" uid="uid://cutue6at5ryan" path="res://spawn_engine/entity_data.gd" id="5_1vmna"]
+[ext_resource type="Resource" uid="uid://c3uo0nkkq7ovp" path="res://entities/bacteria/bacteria.tres" id="6_wmqhs"]
+[ext_resource type="PackedScene" uid="uid://cu2rnmxffl7tw" path="res://ui/game_ui/game_ui.tscn" id="7_1vmna"]
+[ext_resource type="Resource" uid="uid://122yltmjr84s" path="res://entities/virus/virus.tres" id="7_wmqhs"]
+[ext_resource type="Resource" uid="uid://bvrete62dwypb" path="res://entities/leucocyte/leukocyte.tres" id="8_4yavt"]
 
 [node name="Game" type="Node2D" unique_id=385261838]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=321953818]
+layer = -1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=483945683]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_m71xk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=97108118]
+offset_left = -2050.0
+offset_top = -2050.0
+offset_right = 2050.0
+offset_bottom = 2050.0
+texture = ExtResource("2_m71xk")
+
 [node name="Player" parent="." unique_id=73547909 instance=ExtResource("1_fafdd")]
+z_index = 1
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1229210349]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1549092055]
+modulate = Color(1, 1, 1, 0.101960786)
+offset_left = -2000.0
+offset_top = -2000.0
+offset_right = 2000.0
+offset_bottom = 2000.0
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2080973053]
-offset_left = -1000.0
-offset_top = -500.0
-offset_right = 1000.0
-offset_bottom = 500.0
-texture = ExtResource("2_qdja7")
+[node name="AttackSpawner" parent="." unique_id=1604386583 instance=ExtResource("4_knu3h")]
+entities = Array[ExtResource("5_1vmna")]([ExtResource("6_wmqhs"), ExtResource("7_wmqhs"), ExtResource("8_4yavt")])
+
+[node name="GameUi" parent="." unique_id=42059756 instance=ExtResource("7_1vmna")]

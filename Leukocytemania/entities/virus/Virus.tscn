@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xmjokismtbdb"]
+
+[ext_resource type="Script" uid="uid://drrx4cx0xvnha" path="res://entities/virus/virus.gd" id="1_a4bu1"]
+[ext_resource type="Texture2D" uid="uid://2f23fceembwc" path="res://entities/virus/virus.png" id="2_nmw3x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_poctj"]
+radius = 5.0
+
+[node name="Virus" type="CharacterBody2D" unique_id=1604919092 groups=["damager", "eatable"]]
+script = ExtResource("1_a4bu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683116722]
+shape = SubResource("CircleShape2D_poctj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746694435]
+scale = Vector2(0.142, 0.142)
+texture = ExtResource("2_nmw3x")

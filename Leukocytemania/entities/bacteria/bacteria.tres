@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EntityData" format=3 uid="uid://c3uo0nkkq7ovp"]
+
+[ext_resource type="PackedScene" uid="uid://b3a32nnyypaoh" path="res://entities/bacteria/Bacteria.tscn" id="1_8t6fr"]
+[ext_resource type="Script" uid="uid://cutue6at5ryan" path="res://spawn_engine/entity_data.gd" id="1_45yq7"]
+
+[resource]
+script = ExtResource("1_45yq7")
+scene = ExtResource("1_8t6fr")
+rarity = 1.0
+max_alive = 810
+metadata/_custom_type_script = "uid://cutue6at5ryan"

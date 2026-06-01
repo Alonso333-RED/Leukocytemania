@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3a32nnyypaoh"]
+
+[ext_resource type="Script" uid="uid://cfwhxjjaia5i8" path="res://entities/bacteria/bacteria.gd" id="1_226yh"]
+[ext_resource type="Texture2D" uid="uid://dd7oluloh4i86" path="res://entities/bacteria/bacteria.png" id="1_kvd2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_226yh"]
+radius = 4.0
+height = 18.0
+
+[node name="Bacteria" type="CharacterBody2D" unique_id=1604919092 groups=["eatable"]]
+script = ExtResource("1_226yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683116722]
+shape = SubResource("CapsuleShape2D_226yh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746694435]
+scale = Vector2(0.142, 0.142)
+texture = ExtResource("1_kvd2u")

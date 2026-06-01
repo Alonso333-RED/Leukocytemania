@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cu2rnmxffl7tw"]
+
+[ext_resource type="Texture2D" uid="uid://c416fmysc0eqb" path="res://ui/game_ui/sprites/go_home.png" id="1_pfn65"]
+[ext_resource type="Script" uid="uid://7tpiokwgdjc2" path="res://ui/game_ui/game_ui.gd" id="1_wej1e"]
+[ext_resource type="Script" uid="uid://cd4qtdvmr3pve" path="res://ui/game_ui/button_scripts/exit.gd" id="2_bruof"]
+[ext_resource type="Texture2D" uid="uid://cnblfh2137u5i" path="res://ui/game_ui/sprites/move.png" id="6_qcef8"]
+[ext_resource type="FontFile" uid="uid://d3bb1xocxaabe" path="res://fonts/Doto-VariableFont_ROND,wght.ttf" id="7_qcef8"]
+[ext_resource type="Script" uid="uid://ciaegpevnh74m" path="res://addons/virtual_joystick_plus/virtual_joystick_plus.gd" id="19_7n2wi"]
+[ext_resource type="Texture2D" uid="uid://bmdf2ismpvx8m" path="res://addons/virtual_joystick_plus/resources/textures/joystick_texture_6.png" id="20_wej1e"]
+
+[node name="GameUi" type="CanvasLayer" unique_id=42059756]
+script = ExtResource("1_wej1e")
+
+[node name="Control" type="Control" parent="." unique_id=1209972714]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control" unique_id=2015289173]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 250.0
+
+[node name="exit" type="Button" parent="Control/GridContainer" unique_id=349843471]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("1_pfn65")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_bruof")
+
+[node name="movement_container" type="GridContainer" parent="Control" unique_id=134170961]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1020.0
+offset_top = -270.0
+offset_right = -520.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VirtualJoystickPlus" type="Control" parent="Control/movement_container" unique_id=649263011]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("19_7n2wi")
+scale_factor = 2.0
+joystick_preset_texture = 6
+joystick_texture = ExtResource("20_wej1e")
+stick_preset_texture = 6
+stick_texture = ExtResource("6_qcef8")
+
+[node name="movement_container2" type="GridContainer" parent="Control" unique_id=756341739]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 500.0
+offset_top = -250.0
+offset_right = 1000.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1716682874]
+layout_mode = 0
+offset_left = 1500.0
+offset_right = 2000.0
+offset_bottom = 250.0
+
+[node name="energy_bar" type="ProgressBar" parent="Control/VBoxContainer" unique_id=1283995428]
+modulate = Color(0, 0.5019608, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("7_qcef8")
+theme_override_font_sizes/font_size = 128
+allow_greater = true
+fill_mode = 1
