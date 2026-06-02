@@ -7,5 +7,5 @@
 script = ExtResource("1_45yq7")
 scene = ExtResource("1_8t6fr")
 rarity = 1.0
-max_alive = 810
+max_alive = 250
 metadata/_custom_type_script = "uid://cutue6at5ryan"
