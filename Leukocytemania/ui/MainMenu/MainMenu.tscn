@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="1_jxptb"]
 [ext_resource type="FontFile" uid="uid://d3bb1xocxaabe" path="res://fonts/Doto-VariableFont_ROND,wght.ttf" id="1_otibh"]
-[ext_resource type="Script" uid="uid://35d6xt4hoo2q" path="res://ui/MainMenu/buttons_scripts/close.gd" id="3_b76km"]
 [ext_resource type="Script" uid="uid://p5f1y4k0aaf1" path="res://ui/MainMenu/buttons_scripts/play.gd" id="3_wlwnj"]
+[ext_resource type="Script" uid="uid://0f1jfi32ecyd" path="res://ui/MainMenu/buttons_scripts/learn.gd" id="4_wlwnj"]
 
 [node name="MainMenu" type="Control" unique_id=138925624]
 layout_mode = 3
@@ -67,9 +67,8 @@ script = ExtResource("3_wlwnj")
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1373752080]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
 
-[node name="Options" type="Button" parent="VBoxContainer/GridContainer" unique_id=691950534]
+[node name="learn" type="Button" parent="VBoxContainer/GridContainer" unique_id=691950534]
 custom_minimum_size = Vector2(250, 125)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -78,52 +77,13 @@ theme_override_fonts/font = ExtResource("1_otibh")
 theme_override_font_sizes/font_size = 63
 text = "Aprende"
 flat = true
-
-[node name="HowToPlay" type="Button" parent="VBoxContainer/GridContainer" unique_id=328309146]
-custom_minimum_size = Vector2(250, 125)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_otibh")
-theme_override_font_sizes/font_size = 63
-text = "Como jugar"
-flat = true
-
-[node name="News" type="Button" parent="VBoxContainer/GridContainer" unique_id=981620631]
-custom_minimum_size = Vector2(250, 125)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_otibh")
-theme_override_font_sizes/font_size = 63
-text = "Novedades"
-flat = true
-
-[node name="Credits" type="Button" parent="VBoxContainer/GridContainer" unique_id=137800470]
-custom_minimum_size = Vector2(250, 125)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_otibh")
-theme_override_font_sizes/font_size = 63
-text = "Creditos"
-flat = true
+icon_alignment = 1
+script = ExtResource("4_wlwnj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1401983969]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
-
-[node name="Close" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=659756932]
-custom_minimum_size = Vector2(500, 94)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_otibh")
-theme_override_font_sizes/font_size = 63
-text = "Cerrar"
-flat = true
-script = ExtResource("3_b76km")
 
 [node name="Author_version" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=915690163]
 custom_minimum_size = Vector2(250, 94)

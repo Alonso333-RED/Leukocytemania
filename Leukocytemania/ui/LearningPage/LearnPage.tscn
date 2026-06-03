@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://44413iyurum7"]
+
+[ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="1_5xyj0"]
+[ext_resource type="Texture2D" uid="uid://c416fmysc0eqb" path="res://ui/game_ui/sprites/go_home.png" id="2_iox7f"]
+[ext_resource type="Script" uid="uid://dv851y8rfnd5k" path="res://ui/LearningPage/to_game.gd" id="3_dqjdg"]
+[ext_resource type="FontFile" uid="uid://d3bb1xocxaabe" path="res://fonts/Doto-VariableFont_ROND,wght.ttf" id="4_b1k3j"]
+[ext_resource type="Texture2D" uid="uid://c81vknh5u3vwu" path="res://player/leukocyte.png" id="5_5yhny"]
+[ext_resource type="Texture2D" uid="uid://v2f0x33d1s4t" path="res://ui/LearningPage/img/CellEatingVirus.png" id="6_gmre4"]
+[ext_resource type="Texture2D" uid="uid://blmqonjasibkl" path="res://ui/LearningPage/img/CellOnLupa.png" id="7_nlcu3"]
+[ext_resource type="Texture2D" uid="uid://bnisks6t7xswi" path="res://ui/LearningPage/img/alimentos.jpg" id="8_8a5w8"]
+
+[node name="LearnPage" type="Control" unique_id=138925624]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1831252156]
+z_index = -1
+layout_mode = 0
+offset_left = -1250.0
+offset_top = -625.0
+offset_right = 1250.0
+offset_bottom = 625.0
+texture = ExtResource("1_5xyj0")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1732170326]
+layout_mode = 0
+offset_left = -1250.0
+offset_top = -625.0
+offset_right = 1250.0
+offset_bottom = 625.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1346854490]
+clip_contents = false
+layout_mode = 0
+offset_left = -1000.0
+offset_top = -500.0
+offset_right = 1000.0
+offset_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+draw_focus_border = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=398411960]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=471402321]
+custom_minimum_size = Vector2(2000, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="to_game" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1568999726]
+layout_mode = 2
+icon = ExtResource("2_iox7f")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_dqjdg")
+
+[node name="title0" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1167180931]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_b1k3j")
+theme_override_font_sizes/font_size = 128
+text = "El Leucocito"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="img0" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1871944111]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_5yhny")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="text0" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1286294038]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_b1k3j")
+theme_override_font_sizes/font_size = 64
+text = "Los leucocitos, también llamados glóbulos blancos, son células de la sangre que forman parte del sistema inmunitario. Su función principal es proteger al organismo de infecciones, virus, bacterias y otras sustancias dañinas."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1259071084]
+custom_minimum_size = Vector2(2000, 128)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1759009306]
+custom_minimum_size = Vector2(2000, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="text0" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2035888137]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_b1k3j")
+theme_override_font_sizes/font_size = 64
+text = "Cuando un microorganismo entra al cuerpo, los leucocitos lo detectan y lo combaten para evitar que cause enfermedades. Existen varios tipos de leucocitos, y cada uno cumple una función específica en la defensa del organismo."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="img1" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1689964869]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_gmre4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=226613305]
+custom_minimum_size = Vector2(2000, 128)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1026340686]
+custom_minimum_size = Vector2(2000, 500)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="text0" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=283364275]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_b1k3j")
+theme_override_font_sizes/font_size = 64
+text = "En resumen, los leucocitos son las células encargadas de defender nuestro cuerpo y mantenernos saludables frente a infecciones y enfermedades."
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="img1" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=988334874]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_nlcu3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=121527011]
+custom_minimum_size = Vector2(2000, 128)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=902682465]
+custom_minimum_size = Vector2(2000, 500)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="text0" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=928110056]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_b1k3j")
+theme_override_font_sizes/font_size = 64
+text = "Para mantener un sistema inmunitario saludable, es importante llevar una alimentación equilibrada, dormir bien, hacer ejercicio, mantenerse hidratado y practicar una buena higiene. También ayuda controlar el estrés, evitar fumar o vapear y mantener las vacunas al día."
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="img1" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=405922536]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_8a5w8")
+expand_mode = 1
+stretch_mode = 4
