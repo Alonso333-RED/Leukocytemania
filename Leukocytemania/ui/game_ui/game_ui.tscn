@@ -18,51 +18,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="Control" unique_id=2015289173]
-layout_mode = 0
-offset_right = 250.0
-offset_bottom = 250.0
-
-[node name="exit" type="Button" parent="Control/GridContainer" unique_id=349843471]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-icon = ExtResource("1_pfn65")
-flat = true
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("2_bruof")
-
-[node name="movement_container" type="GridContainer" parent="Control" unique_id=134170961]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1020.0
-offset_top = -270.0
-offset_right = -520.0
-offset_bottom = 230.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="VirtualJoystickPlus" type="Control" parent="Control/movement_container" unique_id=649263011]
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("19_7n2wi")
-scale_factor = 2.0
-joystick_preset_texture = 6
-joystick_texture = ExtResource("20_wej1e")
-stick_preset_texture = 6
-stick_texture = ExtResource("6_qcef8")
 
 [node name="movement_container2" type="GridContainer" parent="Control" unique_id=756341739]
 z_index = 1
@@ -85,14 +42,70 @@ size_flags_vertical = 3
 layout_mode = 0
 offset_left = 1500.0
 offset_right = 2000.0
-offset_bottom = 250.0
+offset_bottom = 1000.0
 
 [node name="energy_bar" type="ProgressBar" parent="Control/VBoxContainer" unique_id=1283995428]
 modulate = Color(0, 0.5019608, 1, 1)
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_qcef8")
+theme_override_font_sizes/font_size = 64
+allow_greater = true
+fill_mode = 1
+
+[node name="eaten_img" type="TextureRect" parent="Control/VBoxContainer" unique_id=1621475723]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="eaten_info" type="Label" parent="Control/VBoxContainer" unique_id=1042331596]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("7_qcef8")
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control" unique_id=1969561955]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 1000.0
+
+[node name="exit" type="Button" parent="Control/VBoxContainer2" unique_id=349843471]
+custom_minimum_size = Vector2(100, 250)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = ExtResource("1_pfn65")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_bruof")
+
+[node name="VirtualJoystickPlus" type="Control" parent="Control/VBoxContainer2" unique_id=649263011]
+custom_minimum_size = Vector2(250, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("19_7n2wi")
+scale_factor = 2.0
+joystick_preset_texture = 6
+joystick_texture = ExtResource("20_wej1e")
+stick_preset_texture = 6
+stick_texture = ExtResource("6_qcef8")
+
+[node name="score" type="Label" parent="Control/VBoxContainer2" unique_id=1238613700]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("7_qcef8")
 theme_override_font_sizes/font_size = 128
-allow_greater = true
-fill_mode = 1
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

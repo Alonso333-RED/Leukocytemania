@@ -14,6 +14,9 @@ var alive_time := 0.0
 var can_be_eaten := false
 var activation_delay := 1.0
 
+var info_flag: String = "bacteria"
+var score = 4
+
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	randomize()

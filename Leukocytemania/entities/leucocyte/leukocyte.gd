@@ -20,6 +20,7 @@ var max_x = 2000
 var min_y = -2000
 var max_y = 2000
 
+var info_flag: String = "leukocyte"
 
 func _ready():
 	randomize()

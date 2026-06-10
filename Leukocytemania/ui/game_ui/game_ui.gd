@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var player = $"../Player"
-@onready var move_joystick = $"Control/movement_container/VirtualJoystickPlus"
+@onready var move_joystick = $"Control/VBoxContainer2/VirtualJoystickPlus"
 
 var use_joystick_on_pc := true
 

@@ -12,7 +12,10 @@ var move_input := Vector2.ZERO
 var energy = 100
 var consumption = 0.0
 
+var info_flag: String
+
 @onready var energy_bar = $"../GameUi/Control/VBoxContainer/energy_bar"
+@onready var root = get_tree().current_scene
 
 func _ready():
 	energy_bar.value = energy
@@ -40,12 +43,15 @@ func _physics_process(delta):
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
+		
+		info_flag = body.info_flag
+		root.change_info_box(info_flag)
 
 		if body.is_in_group("eatable") and body.can_be_eaten:
 			energy += body.energy
 			if energy > 100:
 				energy = 100
-			print(energy)
+			root.add_score(body.score)
 			body.queue_free()
 
 func set_move_input(v: Vector2):

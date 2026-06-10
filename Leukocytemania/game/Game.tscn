@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cahjdlcvetirq" path="res://player/Player.tscn" id="1_fafdd"]
 [ext_resource type="Texture2D" uid="uid://b2ntijwb27f5f" path="res://game/bg.jpg" id="1_m71xk"]
+[ext_resource type="Script" uid="uid://6jfjjwouatdv" path="res://game/game.gd" id="1_qv7dg"]
 [ext_resource type="Texture2D" uid="uid://bcqagyajuy0ly" path="res://game/mask_4000_4000_border100.png" id="2_m71xk"]
 [ext_resource type="PackedScene" uid="uid://c46c56elpxndb" path="res://spawn_engine/EntitySpawner.tscn" id="4_knu3h"]
 [ext_resource type="Script" uid="uid://cutue6at5ryan" path="res://spawn_engine/entity_data.gd" id="5_1vmna"]
@@ -11,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://bvrete62dwypb" path="res://entities/leucocyte/leukocyte.tres" id="8_4yavt"]
 
 [node name="Game" type="Node2D" unique_id=385261838]
+script = ExtResource("1_qv7dg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=321953818]
 layer = -1
@@ -45,3 +47,8 @@ offset_bottom = 2000.0
 entities = Array[ExtResource("5_1vmna")]([ExtResource("6_wmqhs"), ExtResource("7_wmqhs"), ExtResource("8_4yavt")])
 
 [node name="GameUi" parent="." unique_id=42059756 instance=ExtResource("7_1vmna")]
+
+[node name="Timer" type="Timer" parent="." unique_id=490251464]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

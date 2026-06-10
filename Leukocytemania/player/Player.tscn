@@ -2,15 +2,19 @@
 
 [ext_resource type="Script" uid="uid://71i6hryfwstd" path="res://player/player.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://c81vknh5u3vwu" path="res://player/leukocyte.png" id="1_ulp21"]
+[ext_resource type="Shader" uid="uid://dpa8w2b2niyuu" path="res://player/Player.gdshader" id="3_wnvi2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 37.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83hs8"]
+shader = ExtResource("3_wnvi2")
+shader_parameter/fuerza = 0.01
 
 [node name="Player" type="CharacterBody2D" unique_id=73547909 groups=["player"]]
 script = ExtResource("1_3c3w1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428040308]
-z_index = 1
 texture = ExtResource("1_ulp21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21013761]
@@ -18,6 +22,20 @@ shape = SubResource("CircleShape2D_i3pqv")
 debug_color = Color(1, 1, 1, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1241013697]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=1417704835]
+material = SubResource("ShaderMaterial_83hs8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1250.0
+offset_top = -625.0
+offset_right = 1250.0
+offset_bottom = 625.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Timer" type="Timer" parent="." unique_id=1130799886]
 autostart = true
